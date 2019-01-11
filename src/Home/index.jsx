@@ -2,7 +2,7 @@
 /* eslint arrow-parens: 0 */
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
-import scrollScreen from 'rc-scroll-anim/lib/ScrollScreen';
+
 import Nav0 from './Nav0';
 import Banner1 from './Banner1';
 import Content0 from './Content0';
@@ -39,11 +39,6 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    /* 如果不是 dva 2.0 请使用以下代码
-    // 实现整屏滚动
-    const docHeight = this.dom.getBoundingClientRect().height;
-    scrollScreen.init({ docHeight });
-    */
     // 适配手机屏幕;
     enquireScreen((b) => {
       this.setState({ isMobile: !!b });
@@ -56,9 +51,6 @@ export default class Home extends React.Component {
         this.setState({
           show: true,
         });
-        // 实现整屏滚动
-        const docHeight = this.dom.getBoundingClientRect().height;
-        scrollScreen.init({ docHeight });
       }, 500);
     }
     /* 如果不是 dva 2.0 请删除 end */

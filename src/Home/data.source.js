@@ -1,6 +1,6 @@
 import React from 'react';
 export const Nav00DataSource = {
-  wrapper: { className: 'header0 home-page-wrapper' },
+  wrapper: { className: 'header0 home-page-wrapper header-editor_css' },
   page: { className: 'home-page' },
   logo: {
     className: 'header0-logo',
@@ -9,17 +9,10 @@ export const Nav00DataSource = {
   Menu: {
     className: 'header0-menu',
     children: [
-      { name: 'item0', a: { children: '导航一', href: '', target: '' } },
+      { name: 'item0', a: { children: '导航一', href: '' } },
       { name: 'item1', a: { children: '导航二', href: '' } },
       { name: 'item2', a: { children: '导航三', href: '' } },
-      {
-        name: 'item3',
-        a: {
-          children: '导航四',
-          href: '',
-          className: 'undefined jqg6asvfgyd-editor_css',
-        },
-      },
+      { name: 'item3', a: { children: '关于我们', href: '' } },
     ],
   },
   mobileMenu: { className: 'header0-mobile-menu' },
@@ -29,7 +22,7 @@ export const Banner10DataSource = {
   BannerAnim: {
     children: [
       {
-        name: 'elem1',
+        name: 'elem2',
         BannerElement: { className: 'banner-user-elem' },
         textWrapper: { className: 'banner1-text-wrapper' },
         bg: { className: 'bg bg1' },
@@ -74,7 +67,7 @@ export const Content00DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>专利检索</p>
+            <p>专利数据库</p>
           </span>
         ),
       },
@@ -153,8 +146,10 @@ export const Content00DataSource = {
   },
 };
 export const Content30DataSource = {
-  wrapper: { className: 'home-page-wrapper content3-wrapper' },
-  page: { className: 'home-page content3 jqru8ooqmaf-editor_css' },
+  wrapper: {
+    className: 'home-page-wrapper content3-wrapper jqs57c6xpfd-editor_css',
+  },
+  page: { className: 'home-page content3' },
   OverPack: { playScale: 0.3 },
   titleWrapper: {
     className: 'title-wrapper',
@@ -252,7 +247,9 @@ export const Content30DataSource = {
             className: 'content3-title',
             children: (
               <span>
-                <p>产业报告</p>
+                <p>
+                  产业报告<br />
+                </p>
               </span>
             ),
           },
@@ -358,7 +355,7 @@ export const Content60DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>知识产权管理系统</p>
+            <p>知识产权托管系统</p>
           </span>
         ),
         className: 'title-h1',
@@ -449,11 +446,10 @@ export const Content60DataSource = {
   },
 };
 export const Content10DataSource = {
-  wrapper: { className: 'home-page-wrapper content1-wrapper' },
-  OverPack: {
-    className: 'home-page content1 jqru95xd6xc-editor_css',
-    playScale: 0.3,
+  wrapper: {
+    className: 'home-page-wrapper content1-wrapper jqs56r8k3g-editor_css',
   },
+  OverPack: { className: 'home-page content1', playScale: 0.3 },
   imgWrapper: { className: 'content1-img', md: 10, xs: 24 },
   img: {
     children: 'https://zos.alipayobjects.com/rmsportal/nLzbeGQLPyBJoli.png',
@@ -463,7 +459,7 @@ export const Content10DataSource = {
     className: 'content1-title',
     children: (
       <span>
-        <p>知识产权管理体系</p>
+        <p>企业知识产权管理体系</p>
       </span>
     ),
   },
