@@ -4,8 +4,9 @@ import { Row, Col } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 class Content extends React.PureComponent {
-  getBlockChildren = (data) =>
+  getBlockChildren = data =>
     data.map((item, i) => {
+      // eslint-disable-next-line prefer-destructuring
       const children = item.children;
       return (
         <Col key={i.toString()} {...item}>
@@ -33,17 +34,14 @@ class Content extends React.PureComponent {
                 item.name.indexOf('title') === 0 ? 'h1' : 'div',
                 { key: i.toString(), ...item },
                 typeof item.children === 'string' &&
-                item.children.match(
-                  /\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/
-                )
+                item.children.match(/\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/)
                   ? React.createElement('img', {
                       src: item.children,
                       height: '100%',
                       alt: 'img',
                     })
-                  : item.children
-              )
-            )}
+                  : item.children,
+              ))}
           </div>
           <OverPack {...dataSource.OverPack}>
             <QueueAnim

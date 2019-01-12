@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import React from 'react';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -80,16 +81,13 @@ class Content3 extends React.PureComponent {
                 item.name.indexOf('title') === 0 ? 'h1' : 'div',
                 { key: i.toString(), ...item },
                 typeof item.children === 'string' &&
-                item.children.match(
-                  /\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/
-                )
+                item.children.match(/\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/)
                   ? React.createElement('img', {
                       src: item.children,
                       alt: 'img',
                     })
-                  : item.children
-              )
-            )}
+                  : item.children,
+              ))}
           </div>
           <OverPack {...dataSource.OverPack}>
             <QueueAnim key="u" type="bottom">

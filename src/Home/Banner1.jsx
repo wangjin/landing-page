@@ -16,7 +16,9 @@ class Banner extends React.PureComponent {
       const elem = item.BannerElement;
       const elemClassName = elem.className;
       delete elem.className;
-      const { bg, textWrapper, title, content, button } = item;
+      const {
+        bg, textWrapper, title, content, button,
+      } = item;
       return (
         <Element key={i.toString()} {...elem} prefixCls={elemClassName}>
           <BgElement key="bg" {...bg} />
@@ -28,9 +30,7 @@ class Banner extends React.PureComponent {
           >
             <div key="logo" {...title}>
               {typeof title.children === 'string' &&
-              title.children.match(
-                /\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/
-              ) ? (
+              title.children.match(/\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/) ? (
                 <img src={title.children} width="100%" alt="img" />
               ) : (
                 title.children

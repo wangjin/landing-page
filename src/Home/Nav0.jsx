@@ -1,8 +1,12 @@
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TweenOne from 'rc-tween-one';
 import { Menu } from 'antd';
 
+// eslint-disable-next-line prefer-destructuring
 const Item = Menu.Item;
 
 class Header extends React.Component {
@@ -15,6 +19,7 @@ class Header extends React.Component {
   }
 
   phoneClick = () => {
+    // eslint-disable-next-line react/no-find-dom-node
     const menu = findDOMNode(this.menu);
     const phoneOpen = !this.state.phoneOpen;
     this.setState({
@@ -59,6 +64,7 @@ class Header extends React.Component {
             <img width="100%" src={dataSource.logo.children} alt="img" />
           </TweenOne>
           {isMobile && (
+        
             <div
               {...dataSource.mobileMenu}
               onClick={() => {

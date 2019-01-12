@@ -5,10 +5,11 @@ import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 class Content7 extends React.Component {
-  getBlockChildren = (data) =>
+  getBlockChildren = data =>
     data.map((item) => {
       const { title, img, content } = item;
-      ['title', 'img', 'contnet'].forEach((key) => delete item[key]);
+      // eslint-disable-next-line no-param-reassign
+      ['title', 'img', 'contnet'].forEach(key => delete item[key]);
       return (
         <li key={item.name} {...item}>
           <span {...img}>
@@ -29,18 +30,18 @@ class Content7 extends React.Component {
     const queue = isMobile ? 'bottom' : 'left';
     const imgAnim = isMobile
       ? {
-          y: 30,
-          opacity: 0,
-          delay: 600,
-          type: 'from',
-          ease: 'easeOutQuad',
-        }
+        y: 30,
+        opacity: 0,
+        delay: 600,
+        type: 'from',
+        ease: 'easeOutQuad',
+      }
       : {
-          x: 30,
-          opacity: 0,
-          type: 'from',
-          ease: 'easeOutQuad',
-        };
+        x: 30,
+        opacity: 0,
+        type: 'from',
+        ease: 'easeOutQuad',
+      };
     return (
       <div {...props} {...dataSource.wrapper}>
         <OverPack {...dataSource.OverPack} component={Row}>
@@ -58,16 +59,13 @@ class Content7 extends React.Component {
                   item.name.indexOf('title') === 0 ? 'h1' : 'div',
                   { key: i.toString(), ...item },
                   typeof item.children === 'string' &&
-                  item.children.match(
-                    /\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/
-                  )
+                  item.children.match(/\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/)
                     ? React.createElement('img', {
                         src: item.children,
                         alt: 'img',
                       })
-                    : item.children
-                )
-              )}
+                    : item.children,
+                ))}
             </div>
             <QueueAnim
               component="ul"
