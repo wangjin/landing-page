@@ -31,7 +31,6 @@ function Content1(props) {
         <TweenOne
           key="img"
           animation={animType.one}
-          resetStyle
           {...dataSource.imgWrapper}
           component={Col}
           componentProps={{

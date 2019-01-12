@@ -80,7 +80,6 @@ class Content7 extends React.Component {
           <TweenOne
             key="img"
             animation={imgAnim}
-            resetStyle
             {...dataSource.img}
             component={Col}
           >
